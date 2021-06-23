@@ -1,4 +1,4 @@
-# reborn-bot
+#Reborn Bot
 Official Bot for PROJECT REBORN Discord Server.
 
 
