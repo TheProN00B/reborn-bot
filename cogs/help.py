@@ -1,3 +1,4 @@
+from enum import Flag
 import discord
 from discord import colour
 from discord.ext import commands
@@ -19,10 +20,10 @@ class Help(commands.Cog):
                           description = 'Prefix for the bot is `_`. \n Use _help <command> on an extend help on a command',
                           color = discord.Colour.greyple())
 
-    embed.add_field(name = 'Moderation', value = '`clear/purge , kick , ban , unban`')
-    embed.add_field(name = 'Bot', value = '`ping , aboutbot/botinfo`')
-    embed.add_field(name = 'Server', value = '`hello , faq`')
-    embed.add_field(name = 'Fun', value = '`8ball , avatar/pfp/av`')
+    embed.add_field(name = 'Moderation', value = '`clear/purge , kick , ban , unban`', inline=False)
+    embed.add_field(name = 'Bot', value = '`ping , aboutbot/botinfo`', inline=False)
+    embed.add_field(name = 'Server', value = '`hello , faq`', inline=False)
+    embed.add_field(name = 'Fun', value = '`8ball , avatar/pfp/av , meme/memes`', inline=False)
     await ctx.send(embed=embed)
 
   @help.command(aliases = ['purge'])
@@ -103,6 +104,14 @@ class Help(commands.Cog):
                           description = 'Gives user profile picture.',
                           colour = discord.Colour.greyple())
     embed.add_field(name = 'Synatx' , value = '`_av [@mention]`')
+    await ctx.send(embed=embed)
+
+  @help.command(aliases=['memes'])
+  async def meme(self, ctx):
+    embed = discord.Embed(title = '**Help**',
+                          description = 'Posts a random meme from r/memes.',
+                          colour = discord.Colour.greyple())
+    embed.add_field(name = 'Synatx' , value = '`_meme`')
     await ctx.send(embed=embed)
 
 

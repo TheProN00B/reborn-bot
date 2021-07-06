@@ -31,17 +31,17 @@ async def status_change():
     await client.change_presence(activity=discord.Game(next(status)))
 
 @client.command()
-@commands.has_permissions(ban_members=True)
+@commands.has_permissions(administrator=True)
 async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
 
 @client.command()
-@commands.has_permissions(ban_members=True)
+@commands.has_permissions(administrator=True)
 async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
 
 @client.command()
-@commands.has_permissions(ban_members=True)
+@commands.has_permissions(administrator=True)
 async def reload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
     client.load_extension(f'cogs.{extension}')
@@ -55,4 +55,4 @@ async def ping(ctx):
 	await ctx.send (f'Ping! {round(client.latency * 1000)} ms')
 
 
-client.run('Token Goes here')
+client.run('TOKEN_YEETS_HERE')

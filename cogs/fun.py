@@ -1,8 +1,10 @@
 import discord
 import random
+import aiohttp
 from discord.colour import Color
 from discord.ext import commands
 from discord.ext.commands.core import command
+from aiohttp.helpers import TimeoutHandle
 
 class Fun(commands.Cog):
 
@@ -14,6 +16,16 @@ class Fun(commands.Cog):
   @commands.Cog.listener()
   async def on_ready(self):
     print('Fun Cog Loaded')
+
+  @commands.Cog.listener()
+  async def on_message(self, message):
+    if message.content == 'rip' or message.content == 'RIP':
+      await message.add_reaction("<:riplol:858925516312543233>")
+
+  @commands.Cog.listener()
+  async def on_message(self, message):
+    if message.content == 'KEKW' or message.content == 'kekw':
+      await message.add_reaction("<:KekwLaugh:842035311035023370>")
 
   @commands.command(name='8ball')
   async def eightball(self, ctx, *, question):
@@ -46,6 +58,16 @@ class Fun(commands.Cog):
                         icon_url=ctx.author.avatar_url)
       await ctx.send(embed=embed)
 
+  @commands.command(aliases=['memes'])
+  async def meme(self, ctx):
+    async with aiohttp.ClientSession() as cs:
+      async with cs.get('https://www.reddit.com/r/memes/hot.json') as r:
+        res = await r.json()
+      embed = discord.Embed(title="Here's your Meme , kek", color=random.randint(0,0xffffff))
+      embed.set_image(url=res['data']['children'] [random.randint(0, 25)]['data']['url'])
+      embed.set_footer(text=f'Requested by {ctx.author}',
+                      icon_url = ctx.author.avatar_url)
+    await ctx.send(embed=embed, content=None)
 
 
 
