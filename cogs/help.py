@@ -1,8 +1,6 @@
-from enum import Flag
+from aiohttp.helpers import TimeoutHandle
 import discord
-from discord import colour
 from discord.ext import commands
-from discord.ext.commands.core import command
 
 class Help(commands.Cog):
 
@@ -23,7 +21,7 @@ class Help(commands.Cog):
     embed.add_field(name = 'Moderation', value = '`clear/purge , kick , ban , unban`', inline=False)
     embed.add_field(name = 'Bot', value = '`ping , aboutbot/botinfo`', inline=False)
     embed.add_field(name = 'Server', value = '`hello , faq`', inline=False)
-    embed.add_field(name = 'Fun', value = '`8ball , avatar/pfp/av , meme/memes`', inline=False)
+    embed.add_field(name = 'Fun', value = '`8ball , avatar/pfp/av , meme/memes , dankmeme/dank , slap`', inline=False)
     await ctx.send(embed=embed)
 
   @help.command(aliases = ['purge'])
@@ -113,6 +111,23 @@ class Help(commands.Cog):
                           colour = discord.Colour.greyple())
     embed.add_field(name = 'Synatx' , value = '`_meme`')
     await ctx.send(embed=embed)
+
+  @help.command(aliases=['dank'])
+  async def dankmeme(self, ctx):
+    embed = discord.Embed(title = '**Help**',
+                          description = 'Posts a random *danky-daddy* meme from r/dankmemes.',
+                          colour = discord.Colour.greyple())
+    embed.add_field(name = 'Synatx' , value = '`_dankmeme`')
+    await ctx.send(embed=embed)
+
+  @help.command()
+  async def slap(self, ctx):
+    embed = discord.Embed(title = '**Help**',
+                          description = 'Slaps the mentioned user I guess.',
+                          colour = discord.Colour.greyple())
+    embed.add_field(name = 'Synatx' , value = '`_slap [@mention]`')
+    await ctx.send(embed=embed)
+
 
 
 
