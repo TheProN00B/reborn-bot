@@ -46,7 +46,9 @@ class Server(commands.Cog):
     embed.add_field(name='Will it meet the same system requirements as PROJECT REBORN?',
                     value="The idea is to keep the same system requirements as PROJECT REBORN By the moment, alpha-builds doesn't meet those requirements, game will be optimized in further releases.")
     embed.add_field(name='Where can I download the alpha-build?',
-                    value="<#834643182906114058> is the way to go. Be sure your graphics drivers are up-to-date. You don't need UE4. Note that this is just an open alpha-build, so people can see how it is going. It does not represent the final product or experience.")
+                    value="You can get the alpha-build by paying for our $3 package on the Patreon! In the <#845152425739681843> section.")
+    embed.add_field(name="Where can I download the Projects Source code?",
+                    value="You can get the projects Source code by paying for our $10 package on Patreon! in the <#845152425739681843> Section.")
     embed.set_image(url='https://cdn.discordapp.com/attachments/834643663187083266/855289056644300820/Logotype_blackbg.png')
     embed.set_footer(text=f'Requested by {ctx.author}',
                     icon_url=ctx.author.avatar_url)
