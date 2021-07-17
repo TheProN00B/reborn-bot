@@ -1,7 +1,4 @@
 import discord
-from discord import colour
-from discord.embeds import Embed
-from discord.enums import UserContentFilter
 from discord.ext import commands
 from discord.ext.commands.core import command
 
@@ -23,6 +20,7 @@ class Server(commands.Cog):
     embed = discord.Embed(title ='About the Bot!' , 
     description ='This bot is developed by TheProN00B and is completely Open-Source. You can get the Source-Code on GitHub',
     color = discord.Colour.gold())
+    embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/834643663187083266/855103647338725396/Avatar_blackbg.png')
     embed.add_field(name='GitHub', value='https://github.com/TheProN00B/reborn-bot')
     await ctx.send(embed=embed)
 
@@ -31,6 +29,7 @@ class Server(commands.Cog):
     embed = discord.Embed(title = f'Hello {ctx.author}', 
     description = "In case you are a new member , don't forget to check out <#845152425739681843> and <#840909761322156042> for information related to the game and development.", 
     color = discord.Colour.green())
+    embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/834643663187083266/855103647338725396/Avatar_blackbg.png')
     embed.add_field(name="...", value="Also , enjoy your stay in this server.", inline=False)
     await ctx.send(embed=embed)
 

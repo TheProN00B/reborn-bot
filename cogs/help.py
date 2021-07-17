@@ -1,4 +1,3 @@
-from aiohttp.helpers import TimeoutHandle
 import discord
 from discord.ext import commands
 
@@ -17,7 +16,7 @@ class Help(commands.Cog):
     embed = discord.Embed(title = '**Help**',
                           description = 'Prefix for the bot is `_`. \n Use _help <command> on an extend help on a command',
                           color = discord.Colour.greyple())
-
+    embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/834643663187083266/855103647338725396/Avatar_blackbg.png')
     embed.add_field(name = 'Moderation', value = '`clear/purge , kick , ban , unban`', inline=False)
     embed.add_field(name = 'Bot', value = '`ping , aboutbot/botinfo`', inline=False)
     embed.add_field(name = 'Server', value = '`hello , faq`', inline=False)

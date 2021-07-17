@@ -1,7 +1,5 @@
 import discord
-from discord import client
 from discord.ext import commands
-from discord.ext.commands import errors
 from discord.ext.commands.core import command
 
 
