@@ -1,12 +1,12 @@
 # Reborn Bot
-Official Bot for PROJECT REBORN Discord Server.
+A simple Discord Bot written using discord.py
+
+This bot is dead due to the discontinuation of discord.py and the discord server being changed.
+
+you can still use this code as long as discord.py stays up.
 
 
-This is a my first fully working python discord bot ever created. So don't expect it to be very beautifully made, lol.
 
-You can use this code to host your bot too! Just go over to main.py and add your token. Yeah , thats it.
+I created this bot with the help of @ZeusAbhijeet and Python Discord server.
 
-Special thanks to ZeusAbhijeet and Python Discord Server for helping me while creating this bot.
-
-
-Enjoy :)
+hope you like it :)
